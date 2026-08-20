@@ -33,7 +33,7 @@ params:
   author: Johnny Son
   description: "Johnny Son 的个人网站"
   defaultTheme: auto
-  ShowReadingTime: true
+  ShowReadingTime: false
   ShowShareButtons: false
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
