@@ -1,13 +1,22 @@
 ---
-title: "关于我"
+title: "About"
+comments: false
 ---
 
-你好，我是 **Johnny Son**。
+## About me
 
-这里是我的个人网站，用来记录学习、项目和生活里的新发现。
+I am completing my undergraduate studies at the **School of Computer Science, Northwestern Polytechnical University**. My undergraduate interests have centered on the foundations of computing, particularly **computer architecture**.
 
-目前可以在 [GitHub](https://github.com/Johnny-son) 找到我。
+For graduate study, I will join the **School of Artificial Intelligence, OPtics and ElectroNics (iOPEN)** at Northwestern Polytechnical University. I hope to explore **multimodal large language models** and **embodied intelligence**.
 
-## 这个网站
+## Education
 
-网站使用 [Hugo](https://gohugo.io/) 和 [PaperMod](https://github.com/adityatelange/hugo-PaperMod) 构建，并托管在 GitHub Pages。文章使用 Markdown 编写，提交到仓库后会自动发布。
+**Northwestern Polytechnical University** · Xi'an, China
+
+- **Incoming Graduate Student**, School of Artificial Intelligence, OPtics and ElectroNics (iOPEN)
+- **B.Eng. in Computer Science**, Kang Jichang Honors Program, School of Computer Science
+
+## Contact
+
+- **QQ** : 1428213180
+- **E-mail** : qiaoxinnwpu@163.com

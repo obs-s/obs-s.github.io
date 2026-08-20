@@ -1,6 +1,6 @@
 baseURL: "https://johnny-son.github.io/"
-languageCode: "zh-cn"
-defaultContentLanguage: "zh-cn"
+locale: "en-US"
+defaultContentLanguage: "en"
 title: "Johnny Son"
 theme: PaperMod
 
@@ -18,14 +18,14 @@ outputs:
 
 menu:
   main:
-    - name: 关于
+    - name: About
       url: /about/
       weight: 10
-    - name: 文章
+    - name: Posts
       url: /archives/
       weight: 20
-    - name: 搜索
-      url: /search/
+    - name: Friends
+      url: /friends/
       weight: 30
 
 params:
@@ -34,36 +34,46 @@ params:
   description: "Johnny Son 的个人网站"
   defaultTheme: auto
   ShowReadingTime: true
-  ShowShareButtons: true
+  ShowShareButtons: false
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
   ShowCodeCopyButtons: true
   ShowToc: true
-  comments: false
+  comments: true
   dateFormat: "2006-01-02"
 
   profileMode:
     enabled: true
     title: "Johnny Son"
-    subtitle: "记录想法、项目与持续学习。"
-    imageUrl: "images/avatar.svg"
+    subtitle: "Curious by nature, building by choice"
+    imageUrl: "https://github.com/Johnny-son.png?size=360"
     imageTitle: "Johnny Son"
     imageWidth: 180
     imageHeight: 180
-    buttons:
-      - name: 浏览文章
-        url: /posts/
-      - name: 了解更多
-        url: /about/
 
   socialIcons:
     - name: github
       url: "https://github.com/Johnny-son"
-    - name: Rss
-      url: "/index.xml"
+    - name: gitee
+      url: "https://gitee.com/qx-0"
+
+  giscus:
+    repo: "Johnny-son/Johnny-son.github.io"
+    repoID: "R_kgDOT-Id6A"
+    category: "Announcements"
+    categoryID: "DIC_kwDOT-Id6M4DDxWn"
+    mapping: "pathname"
+    strict: "0"
+    reactionsEnabled: "1"
+    emitMetadata: "0"
+    inputPosition: "bottom"
+    theme: "preferred_color_scheme"
+    lang: "en"
+    loading: "lazy"
+    crossorigin: "anonymous"
 
   assets:
-    favicon: "images/avatar.svg"
+    favicon: "https://github.com/Johnny-son.png?size=64"
 
 markup:
   goldmark:

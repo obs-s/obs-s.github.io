@@ -1,0 +1,29 @@
+{{- /* Giscus comments */ -}}
+<div class="comments"></div>
+<script>
+    (() => {
+        const container = document.querySelector("div.comments");
+        if (!container) return;
+
+        const storedTheme = window.localStorage && window.localStorage.getItem("pref-theme");
+        const pageTheme = document.documentElement.dataset.theme;
+        const script = document.createElement("script");
+
+        script.src = "https://giscus.app/client.js";
+        script.setAttribute("data-repo", "{{ site.Params.giscus.repo }}");
+        script.setAttribute("data-repo-id", "{{ site.Params.giscus.repoID }}");
+        script.setAttribute("data-category", "{{ site.Params.giscus.category }}");
+        script.setAttribute("data-category-id", "{{ site.Params.giscus.categoryID }}");
+        script.setAttribute("data-mapping", "{{ site.Params.giscus.mapping }}");
+        script.setAttribute("data-strict", "{{ site.Params.giscus.strict }}");
+        script.setAttribute("data-reactions-enabled", "{{ site.Params.giscus.reactionsEnabled }}");
+        script.setAttribute("data-emit-metadata", "{{ site.Params.giscus.emitMetadata }}");
+        script.setAttribute("data-input-position", "{{ site.Params.giscus.inputPosition }}");
+        script.setAttribute("data-theme", storedTheme || pageTheme || "{{ site.Params.giscus.theme }}");
+        script.setAttribute("data-lang", "{{ site.Params.giscus.lang }}");
+        script.setAttribute("data-loading", "{{ site.Params.giscus.loading }}");
+        script.setAttribute("crossorigin", "{{ site.Params.giscus.crossorigin }}");
+        script.async = true;
+        container.appendChild(script);
+    })();
+</script>
