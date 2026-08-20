@@ -1,6 +1,6 @@
 ---
 title: "loongson-cup-memories"
-date: 2025-8-29
+date: 2025-08-29
 draft: false
 tags: ["龙芯杯", "CPU", "LoongArch", "回忆"]
 categories: ["随笔"]
