@@ -1,0 +1,73 @@
+baseURL: "https://johnny-son.github.io/"
+languageCode: "zh-cn"
+defaultContentLanguage: "zh-cn"
+title: "Johnny Son"
+theme: PaperMod
+
+enableRobotsTXT: true
+enableEmoji: true
+
+pagination:
+  pagerSize: 10
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+menu:
+  main:
+    - name: 关于
+      url: /about/
+      weight: 10
+    - name: 文章
+      url: /archives/
+      weight: 20
+    - name: 搜索
+      url: /search/
+      weight: 30
+
+params:
+  env: production
+  author: Johnny Son
+  description: "Johnny Son 的个人网站"
+  defaultTheme: auto
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowToc: true
+  comments: false
+  dateFormat: "2006-01-02"
+
+  profileMode:
+    enabled: true
+    title: "Johnny Son"
+    subtitle: "记录想法、项目与持续学习。"
+    imageUrl: "images/avatar.svg"
+    imageTitle: "Johnny Son"
+    imageWidth: 180
+    imageHeight: 180
+    buttons:
+      - name: 浏览文章
+        url: /posts/
+      - name: 了解更多
+        url: /about/
+
+  socialIcons:
+    - name: github
+      url: "https://github.com/Johnny-son"
+    - name: Rss
+      url: "/index.xml"
+
+  assets:
+    favicon: "images/avatar.svg"
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    noClasses: false
