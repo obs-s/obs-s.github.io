@@ -27,7 +27,7 @@ params:
   ShowBreadCrumbs: false
   ShowCodeCopyButtons: true
   ShowToc: true
-  comments: false
+  comments: true
   dateFormat: "2006-01-02"
 
   mainSections:
@@ -36,16 +36,16 @@ params:
 
   giscus:
     repo: "obs-s/obs-s.github.io"
-    repoID: ""
+    repoID: "R_kgDOVCE1ew"
     category: "Announcements"
-    categoryID: ""
+    categoryID: "DIC_kwDOVCE1e84DHacq"
     mapping: "pathname"
-    strict: "0"
+    strict: "1"
     reactionsEnabled: "1"
     emitMetadata: "0"
     inputPosition: "bottom"
     theme: "preferred_color_scheme"
-    lang: "en"
+    lang: "zh-CN"
     loading: "lazy"
     crossorigin: "anonymous"
 

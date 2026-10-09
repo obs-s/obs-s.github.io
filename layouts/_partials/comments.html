@@ -1,13 +1,18 @@
 {{- if and site.Params.comments site.Params.giscus.repoID site.Params.giscus.categoryID -}}
 {{- /* Giscus comments */ -}}
-<div class="comments"></div>
+<section class="blog-comments" aria-labelledby="comments-heading">
+  <h2 id="comments-heading">评论</h2>
+  <div class="giscus"></div>
+</section>
 <script>
     (() => {
-        const container = document.querySelector("div.comments");
+        const container = document.querySelector("div.giscus");
         if (!container) return;
 
-        const storedTheme = window.localStorage && window.localStorage.getItem("pref-theme");
-        const pageTheme = document.documentElement.dataset.theme;
+        const commentTheme = () => {
+            const theme = document.documentElement.dataset.theme;
+            return theme === "light" || theme === "dark" ? theme : "preferred_color_scheme";
+        };
         const script = document.createElement("script");
 
         script.src = "https://giscus.app/client.js";
@@ -20,12 +25,20 @@
         script.setAttribute("data-reactions-enabled", "{{ site.Params.giscus.reactionsEnabled }}");
         script.setAttribute("data-emit-metadata", "{{ site.Params.giscus.emitMetadata }}");
         script.setAttribute("data-input-position", "{{ site.Params.giscus.inputPosition }}");
-        script.setAttribute("data-theme", storedTheme || pageTheme || "{{ site.Params.giscus.theme }}");
+        script.setAttribute("data-theme", commentTheme());
         script.setAttribute("data-lang", "{{ site.Params.giscus.lang }}");
         script.setAttribute("data-loading", "{{ site.Params.giscus.loading }}");
         script.setAttribute("crossorigin", "{{ site.Params.giscus.crossorigin }}");
         script.async = true;
         container.appendChild(script);
+
+        // Keep comments in sync with the site's light/dark toggle.
+        new MutationObserver(() => {
+            const frame = container.querySelector("iframe.giscus-frame");
+            if (frame && frame.contentWindow) {
+                frame.contentWindow.postMessage({ giscus: { setConfig: { theme: commentTheme() } } }, "https://giscus.app");
+            }
+        }).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
     })();
 </script>
 

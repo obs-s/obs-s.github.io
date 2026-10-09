@@ -39,12 +39,22 @@ hugo --minify
 
 ## GitHub Pages
 
-部署工作流保留在 `.github/workflows/deploy.yml`。准备发布时，在此仓库 Settings → Pages 将 Source 设为 GitHub Actions；推送到 `main` 后会构建和部署。
+部署工作流保留在 `.github/workflows/deploy.yml`。仓库已公开，Settings → Pages 的 Source 已设为 GitHub Actions；推送到 `main` 后会自动构建和部署。
 
-代码已推送到私有仓库。当前账号无法从私有仓库启用 GitHub Pages，网站尚未上线；部署工作流已准备好。评论保持关闭。
+发布文章：在 `content/posts/` 新建 Markdown 文件，填写 `title`、`date`、`draft: false` 和可选的 `summary`，正文放在 front matter 下方。本地预览确认后，提交并推送：
+
+```bash
+git add content/posts/
+git commit -m "Publish new post"
+git push origin main
+```
+
+部署进度可在仓库 Actions 页面查看。
 
 ## 评论
 
-Giscus 默认关闭，旧账号的仓库 ID 和分类 ID 已清空。启用前，需要为 `obs-s/obs-s.github.io` 开启 Discussions、安装 Giscus，并取得该仓库的 repo ID 和 category ID。
+文章页已启用 Giscus 中文评论区，并跟随网站切换浅色/深色主题。访客登录 GitHub 后即可评论或回应。
 
-在 `hugo.yaml` 中填入新 ID 并设置 `params.comments: true`。即便个别文章声明了 `comments: true`，未完成新站配置时也不会加载评论脚本。
+评论存放在 `obs-s/obs-s.github.io` 仓库 Discussions 的 Announcements 分类，按文章 URL 路径匹配；首次评论或回应后自动创建对应讨论。文章发布后尽量保持路径不变，以免评论分散到新讨论。
+
+`hugo.yaml` 中的 `params.comments` 控制全站评论开关；单篇文章可在 front matter 中添加 `comments: false` 关闭评论。Giscus App 仅授权访问此博客仓库。
