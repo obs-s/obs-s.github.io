@@ -1,7 +1,7 @@
-baseURL: "https://johnny-son.github.io/"
+baseURL: "https://obs-s.github.io/"
 locale: "en-US"
 defaultContentLanguage: "en"
-title: "Johnny Son"
+title: "obs-s"
 theme: PaperMod
 
 enableRobotsTXT: true
@@ -16,52 +16,29 @@ outputs:
     - RSS
     - JSON
 
-menu:
-  main:
-    - name: About
-      url: /about/
-      weight: 10
-    - name: Posts
-      url: /archives/
-      weight: 20
-    - name: Friends
-      url: /friends/
-      weight: 30
-
 params:
   env: production
-  author: Johnny Son
-  description: "Johnny Son personal website"
+  author: obs-s
+  description: "obs-s blog"
   defaultTheme: auto
   ShowReadingTime: false
   ShowShareButtons: false
   ShowPostNavLinks: true
-  ShowBreadCrumbs: true
+  ShowBreadCrumbs: false
   ShowCodeCopyButtons: true
   ShowToc: true
-  comments: true
+  comments: false
   dateFormat: "2006-01-02"
 
-  profileMode:
-    enabled: true
-    title: "Johnny Son"
-    subtitle: "Curious by nature, building by choice"
-    imageUrl: "https://github.com/Johnny-son.png?size=360"
-    imageTitle: "Johnny Son"
-    imageWidth: 180
-    imageHeight: 180
-
-  socialIcons:
-    - name: github
-      url: "https://github.com/Johnny-son"
-    - name: gitee
-      url: "https://gitee.com/qx-0"
+  mainSections:
+    - posts
+  blogAvatar: "https://github.com/obs-s.png?size=480"
 
   giscus:
-    repo: "Johnny-son/Johnny-son.github.io"
-    repoID: "R_kgDOT-Id6A"
+    repo: "obs-s/obs-s.github.io"
+    repoID: ""
     category: "Announcements"
-    categoryID: "DIC_kwDOT-Id6M4DDxWn"
+    categoryID: ""
     mapping: "pathname"
     strict: "0"
     reactionsEnabled: "1"
@@ -73,7 +50,11 @@ params:
     crossorigin: "anonymous"
 
   assets:
-    favicon: "https://github.com/Johnny-son.png?size=64"
+    favicon: "https://github.com/obs-s.png?size=64"
+    favicon16x16: "https://github.com/obs-s.png?size=16"
+    favicon32x32: "https://github.com/obs-s.png?size=32"
+    apple_touch_icon: "https://github.com/obs-s.png?size=180"
+    safari_pinned_tab: "/safari-pinned-tab.svg"
 
 markup:
   goldmark:

@@ -1,3 +1,4 @@
+{{- if and site.Params.comments site.Params.giscus.repoID site.Params.giscus.categoryID -}}
 {{- /* Giscus comments */ -}}
 <div class="comments"></div>
 <script>
@@ -27,3 +28,5 @@
         container.appendChild(script);
     })();
 </script>
+
+{{- end -}}

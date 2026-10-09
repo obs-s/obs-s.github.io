@@ -1,0 +1,23 @@
+{{- $posts := where site.RegularPages "Type" "posts" -}}
+<aside class="blog-sidebar" aria-label="博客归档">
+  {{- with site.Params.blogAvatar }}
+  <img class="blog-avatar" src="{{ . }}" alt="obs-s avatar" width="208" height="208" decoding="async">
+  {{- end }}
+  <div class="sidebar-archive">
+    <div class="sidebar-heading">
+      <h2>归档</h2>
+      <span>{{ len $posts }} 篇文章</span>
+    </div>
+    <nav class="archive-navigation" aria-label="按年份浏览文章">
+      {{- range $posts.GroupByPublishDate "2006" }}
+      {{- if ne .Key "0001" }}
+      <a href="{{ if $.IsHome }}#{{ .Key }}{{ else }}{{ "" | absLangURL }}#{{ .Key }}{{ end }}">
+        <span>{{ .Key }}</span>
+        <span class="sidebar-count">{{ printf "%02d" (len .Pages) }}</span>
+      </a>
+      {{- end }}
+      {{- end }}
+    </nav>
+    <a class="blog-rss" href="{{ "index.xml" | absLangURL }}">RSS 订阅 <span aria-hidden="true">↗</span></a>
+  </div>
+</aside>
