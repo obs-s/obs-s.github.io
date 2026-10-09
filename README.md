@@ -41,7 +41,7 @@ hugo --minify
 
 部署工作流保留在 `.github/workflows/deploy.yml`。准备发布时，在此仓库 Settings → Pages 将 Source 设为 GitHub Actions；推送到 `main` 后会构建和部署。
 
-当前仓库使用 GitHub Actions 构建并部署到 GitHub Pages。
+代码已推送到私有仓库。当前账号无法从私有仓库启用 GitHub Pages，网站尚未上线；部署工作流已准备好。评论保持关闭。
 
 ## 评论
 
